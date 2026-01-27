@@ -5,9 +5,9 @@ import UserListView from "@/components/userListViewSection";
 import BuyerRequestView from "@/components/buyerRequestView";
 import ProjectView from "@/components/projectView";
 import { useSelector } from "react-redux";
-
+import BuyerDashboard from "@/components/buyerDashbord";
 export default function Page() {
-  const role = "admin";
+  const role = "buyer";
   const currentPage = useSelector((state) => state.admin.page);
   if (role == "admin") {
     return (
@@ -25,6 +25,16 @@ export default function Page() {
           {/* admin Header */}
           {/* user section */}
           {/* project section */}
+        </section>
+      </div>
+    );
+  }
+
+  if (role == "buyer") {
+    return (
+      <div>
+        <section className="items-start! flex-col!">
+          <BuyerDashboard />
         </section>
       </div>
     );
